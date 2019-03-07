@@ -30,22 +30,17 @@ export default class TodosList extends Component {
 
     getTodoList() {
         axios.get('http://localhost:4000/todos')
-        .then(response => {
-            this.setState({ todos: response.data })
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+            .then(response => {
+                this.setState({ todos: response.data })
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     componentDidMount() {
-       this.getTodoList();
+        this.getTodoList();
     }
-
-    // getSnapshotBeforeUpdate(prevProps,prevState){
-	// 	console.log('--->: TodosList -> getSnapshotBeforeUpdate -> prevState', prevState);
-	// 	console.log('--->: TodosList -> getSnapshotBeforeUpdate -> prevProps', prevProps);
-    // }
     // componentDidUpdate() {
     //     axios.get('http://localhost:4000/todos')
     //         .then(response => {
