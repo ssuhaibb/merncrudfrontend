@@ -5,7 +5,7 @@ import axios from 'axios';
 const Todo = (props) => (
     <tr>
         <td className={props.todo.todo_completed ? 'completed' : ''}>
-            {props.todo.todo_descriptopn}
+            {props.todo.todo_description}
         </td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>
             {props.todo.todo_responsible}
@@ -26,6 +26,7 @@ export default class TodosList extends Component {
         this.state = {
             todos: []
         }
+        console.log('inside const');
     }
 
     getTodoList() {
@@ -41,15 +42,7 @@ export default class TodosList extends Component {
     componentDidMount() {
         this.getTodoList();
     }
-    // componentDidUpdate() {
-    //     axios.get('http://localhost:4000/todos')
-    //         .then(response => {
-    //             this.setState({ todos: response.data })
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         })
-    // }
+    
 
     todoList = () => {
         return this.state.todos.map((currentTodo, i) => {

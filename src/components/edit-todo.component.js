@@ -37,13 +37,12 @@ export default class EditTodo extends Component {
         axios.post('http://localhost:4000/todos/update/' + this.props.match.params.id, obj)
             .then((response)=>{
                 console.log(response.data);
+                this.props.history.push('/');
             })
-
-            this.props.history.push('/');
             
     }
 
-    
+
     getTodoList() {
         axios.get('http://localhost:4000/todos/' + this.props.match.params.id)
             .then(response => {
