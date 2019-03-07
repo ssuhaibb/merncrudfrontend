@@ -71,6 +71,8 @@ export default class CreateTodo extends Component {
                             onChange={this.onChangeTodoResponsible}
                         />
                     </div>
+
+
                     <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
@@ -83,6 +85,8 @@ export default class CreateTodo extends Component {
                             />
                             <label className="form-check-label">Low</label>
                         </div>
+
+                        
                         <div className="form-check form-check-inline">
                             <input className="form-check-input"
                                 type="radio"
